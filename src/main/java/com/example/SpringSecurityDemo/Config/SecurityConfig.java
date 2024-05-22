@@ -7,9 +7,12 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 
@@ -42,22 +45,22 @@ public class SecurityConfig {
         return configuration.getAuthenticationManager();
     }
 
-//    @Bean
-//    public UserDetailsService userDetailsService(){
+    //@Bean
+    //public UserDetailsService userDetailsService(){
 //
-//        UserDetails john = User.builder()
-//                .username("john")
-//                .password(passwordEncoder().encode("john"))
-//                .roles("USER")
-//                .build();
+    //    UserDetails john = User.builder()
+    //            .username("john")
+    //            .password(passwordEncoder().encode("john"))
+    //            .roles("USER")
+    //            .build();
 //
-//        UserDetails sam = User.builder()
-//                .username("sam")
-//                .password(passwordEncoder().encode("sam"))
-//                .roles("ADMIN")
-//                .build();
+    //    UserDetails sam = User.builder()
+    //            .username("sam")
+    //            .password(passwordEncoder().encode("sam"))
+    //            .roles("ADMIN")
+    //            .build();
 //
-//        return new InMemoryUserDetailsManager(john,sam);
-//    }
+    //    return new InMemoryUserDetailsManager(john,sam);
+    //}
 
 }

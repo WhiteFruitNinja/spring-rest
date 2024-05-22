@@ -24,6 +24,7 @@ public class Employee {
     private String email;
     @Column(nullable = false)
     private String password;
+
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "employee_roles",
             joinColumns = @JoinColumn(name = "employee_id", referencedColumnName = "id"),
